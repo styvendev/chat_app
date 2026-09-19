@@ -1,5 +1,5 @@
 @import 'tailwindcss';
 
 .btn {
-  @apply px-10 py-2 bg-blue-900 m-2 rounded-lg text-white font-bold;
+  @apply px-10 py-2 bg-[#a2d2ff] m-2 rounded-lg text-[#003049] font-bold;
 }
