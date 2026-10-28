@@ -8,18 +8,31 @@
 
 <!-- Example Received Message -->
 <div v-else class="flex">
-  <div class="bg-gray-300 text-black p-2 rounded-lg max-w-xs">
+    <div v-if="isloading" class="bg-gray-300 text-gray-500 p-2 rounded-lg max-w-xs">
+    <p>...</p>
+  </div>
+  <div v-else class="bg-gray-300 text-black p-2 rounded-lg max-w-xs">
     <p>{{ text }}</p>
-    <img :src="imageUrl" alt="Yes or Not Image" class="my-2 rounded-lg object-cover w-60 h-60" />
+    <img v-if="imageUrl" :src="imageUrl" alt="Yes or Not Image" class="my-2 rounded-lg object-cover w-60 h-60" />
   </div>
 </div>
 </template>
 
 <script lang="ts" setup>
-interface props {
+import { onMounted, ref } from 'vue';
+
+interface Props {
   text: string;
   isSentByUser: boolean;
   imageUrl?: string;
 }
-defineProps<props>();
+defineProps<Props>();
+
+const isloading = ref(true)
+
+onMounted(() => {
+  setTimeout(() => {
+    isloading.value = false
+  },500)
+})
 </script>
