@@ -1,10 +1,11 @@
 {
-  "name": "vue-class",
+  "name": "chat_app",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "test": "vitest",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
@@ -36,6 +37,7 @@
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-vue-devtools": "^8.0.6",
+    "vitest": "^5.1.0",
     "vue-tsc": "^3.2.5"
   },
   "engines": {
